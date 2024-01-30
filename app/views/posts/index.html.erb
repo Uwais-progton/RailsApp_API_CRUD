@@ -1,0 +1,27 @@
+<!--<h1>All Posts</h1>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+        <%= link_to post['title'], post_path(post['id']) %> 
+        <button><%= link_to "View", post_path(post['id']) %></button>
+        <!--<button><%= link_to "Edit", post_path(post['id']) %></button>--
+    </li>
+  <% end %>
+</ul>-->
+<!-- app/views/posts/index.html.erb -->
+
+<!-- app/views/posts/index.html.erb -->
+
+<h1>All Posts</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post['title'], post_path(post['id']) %>
+      <%= link_to 'Edit', edit_post_path(post['id']), class: 'btn btn-secondary' %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
+
